@@ -451,6 +451,7 @@ namespace SQLite
 			_open = true;
 
 			StoreDateTimeAsTicks = connectionString.StoreDateTimeAsTicks;
+            StoreTimeSpanAsTicks = connectionString.StoreTimeSpanAsTicks;
 			DateTimeStringFormat = connectionString.DateTimeStringFormat;
 			DateTimeStyle = connectionString.DateTimeStyle;
 
