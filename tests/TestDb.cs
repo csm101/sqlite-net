@@ -79,12 +79,13 @@ namespace SQLite.Tests
 	{
 		public static string GetTempFileName ()
 		{
+
 #if NETFX_CORE
-			var name = Guid.NewGuid () + ".sqlite";
-			return Path.Combine (Windows.Storage.ApplicationData.Current.LocalFolder.Path, name);
+			var tempPath = Windows.Storage.ApplicationData.Current.LocalFolder.Path;;
 #else
-			return Path.GetTempFileName ();
+			var tempPath = Path.GetTempPath();
 #endif
+           return Path.Combine(tempPath, Guid.NewGuid() + ".sqlite");
 		}
 	}
 }
